@@ -19,30 +19,29 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
 
         while (true) {
-            System.out.println("계속 검색을 하고싶으시면 y, 종료하고 싶으면 n");
+            System.out.println("계속 검색을 하고 싶다면 y, 종료하고 싶다면 n");
             String input = scan.next();
 
             if (input.equals("y")) {
                 System.out.println("검색을 시작합니다");
                 String name = scan.next();
-                boolean flag = false;
+                boolean flag = false; //flag변수를 사용하여 알고리즘 구현
 
                 for (Student student : list) {
                     if (student.getName().equals(name)) {
-                        System.out.println(student.getNo());
+                        System.out.println(student.getNo()); //학생이름을 입력하면 학번을 출력
                         flag = true;
                     }
                 }
                 
-                if (!flag) {
-                    System.out.println("존재하는 학생이 없습니다");
+                if (!flag) { //list에 저장된 학생이 아니라면
+                    System.out.println("일치하는 학생이 없음");
                 }
 
             }else if (input.equals("n")) {
-                break;
+                break; //while문 빠져나감
             }
         }
-
         System.out.println("프로그램이 종료되었습니다");
     }
 }
